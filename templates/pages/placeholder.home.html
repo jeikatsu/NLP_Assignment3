@@ -1,0 +1,42 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<style>
+  pre {
+      white-space: pre-wrap;       /* Since CSS 2.1 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+  span{
+    display: inline;
+  }
+  #sample{
+    display:inline;
+  }
+</style>
+<div class="page-header">
+  <h1>Konosuba Chapter 1</h1>
+</div>
+
+<div class="page-header">
+  <h4>Arriving in a New World with This Self-Proclaimed Goddess!</h4>
+<h4>TL: Skythewood</h4>
+<h4>Editing: Adam, Cannongerbil, Xenthur, Striker</h4>
+</div>
+
+
+<p class="lead">
+  {% for phrase in content %}
+    {% if phrase[1] == 'c' %}
+      {{phrase[0]}}
+    {% elif phrase[1] == 'n'%}
+      <span style="color:blue;">{{phrase[0]}}</span> 
+    {% else %}
+       <span style="color:red;">{{phrase[0]}}</span> 
+    {% endif %}
+  {% endfor %}
+</p>
+
+{% endblock %}
